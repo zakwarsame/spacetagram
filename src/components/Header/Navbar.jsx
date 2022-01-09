@@ -10,11 +10,18 @@ export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div">
+          <Typography
+            sx={{
+              textAlign: "center",
+              fontFamily: "NasalizationRg-Regular",
+              fontSize: "2.7rem",
+              margin: "10px 0px",
+            }}
+            variant="h6"
+            component="div"
+          >
             Spacetagram
           </Typography>
-        </Toolbar>
       </AppBar>
     </Box>
   );

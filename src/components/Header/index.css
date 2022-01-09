@@ -1,0 +1,13 @@
+.title {
+  font-family: "NasalizationRg-Regular" !important;
+  font-size: 2.7rem !important;
+}
+.subtitle {
+  font-family: "Video Medium" !important;
+}
+
+.header {
+    margin: 5vh 0 50px 0;
+    flex-grow: 1;
+    text-align: center;
+  }
