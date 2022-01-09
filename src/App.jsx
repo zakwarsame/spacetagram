@@ -1,8 +1,9 @@
-lpers/apiCall";
+import apiCall from "./helpers/apiCall";
 import PhotoList from "./components/PhotoList";
 import Container from "@mui/material/Container";
 import Navbar from "./components/Navbar";
 import { Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 const App = () => {
   const [apod, setApod] = useState({});
