@@ -41,6 +41,8 @@ A client-side single page application built using React that pulls data from Nas
 ## Demo
 
 !["Spacetagram gif"](https://github.com/zakwarsame/spacetagram/blob/main/docs/spacetagram_demo.gif)
+!["Error page image"](https://github.com/zakwarsame/spacetagram/blob/main/docs/error.png)
+
 
 ## Running Cypress Tests
 
