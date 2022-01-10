@@ -29,7 +29,7 @@ export default function Navbar() {
           variant="h6"
           component="div"
         >
-          Spacetagram <span style={{fontSize:20, display:"block", fontFamily:"Video Medium"}}>Source from the Nasa API</span>
+          Spacetagram <span style={{fontSize:20, display:"block", fontFamily:"Video Medium"}}>Sourced from NASA's Astronomy Picture of the Day</span>
         </Typography>
 
         <IconButton

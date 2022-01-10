@@ -5,7 +5,9 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import error from "../assets/error.jpg";
 import { Button } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
-// setting up custom color for button
+
+
+// setting up custom color for error button
 const theme = createTheme({
   palette: {
     principle: {
@@ -62,7 +64,7 @@ const Error = () => {
           color="principle"
           variant="contained"
           size="large"
-          sx={{ margin: "20px", borderRadius: 10, color: deepPurple["A700"] }}
+          sx={{ margin: "20px", borderRadius: 10 }}
         >
           Refresh Page
         </Button>
