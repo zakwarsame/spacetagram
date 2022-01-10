@@ -12,7 +12,7 @@ Visit the live link [here]()
 
 ##  Description
 
-A client-side single page application built using React that pulls data from Nasa's [Astronomy Picture of The Day](https://apod.nasa.gov/). Users can then browse through these image and can like or unlike each image. The app also has a dark-mode feature which users can switch to their preference.
+A client-side single page application built using React that pulls data from Nasa's [Astronomy Picture of The Day](https://apod.nasa.gov/). Users can browse through these images and like or unlike them. The app also has a dark-mode feature which users can toggle depending on their preference.
 
 
 ## Installation
@@ -59,4 +59,4 @@ npm run storybook
 
 ## Known Issues
 
-The like button is a checkbox thus not being saved or persisted in localstorage
+The like button is a checkbox thus not being saved or persisted in local storage.
