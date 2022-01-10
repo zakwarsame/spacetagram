@@ -6,8 +6,7 @@ import error from "../assets/error.jpg";
 import { Button } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 
-
-// setting up custom color for error button
+// custom color for error button
 const theme = createTheme({
   palette: {
     principle: {
