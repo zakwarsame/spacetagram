@@ -4,25 +4,32 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import Switch from "@mui/material/Switch";
+import { Button } from "@mui/material";
 
-export default function Navbar() {
+export default function Navbar(colorMode) {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-          <Typography
-            sx={{
-              textAlign: "center",
-              fontFamily: "NasalizationRg-Regular",
-              fontSize: "2.7rem",
-              margin: "10px 0px",
-            }}
-            variant="h6"
-            component="div"
-          >
-            Spacetagram
-          </Typography>
-      </AppBar>
-    </Box>
+    <AppBar position="static">
+      <Toolbar>
+        <Typography
+          sx={{
+            flexGrow: 1,
+            textAlign: "center",
+            fontFamily: "NasalizationRg-Regular",
+            fontSize: "2.7rem",
+            margin: "10px 0px",
+          }}
+          variant="h6"
+          component="div"
+        >
+          Spacetagram
+        </Typography>
+        <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
+        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+      </IconButton>
+      </Toolbar>
+    </AppBar>
   );
 }

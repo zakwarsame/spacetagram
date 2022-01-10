@@ -6,12 +6,9 @@ const Header = () => {
   return (
     <div >
       <Navbar />
-      {/* <Typography className="title" variant="h3" component="div">
-        Spacestagram
-      </Typography> */}
-      <Typography className="subtitle" variant="h6">
+      {/* <Typography className="subtitle" variant="h6">
         Powered By NASA's Image API
-      </Typography>
+      </Typography> */}
     </div>
   );
 };
