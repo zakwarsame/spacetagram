@@ -40,7 +40,7 @@ A client-side single page application built using React that pulls data from Nas
 
 ## Demo
 
-!["Scheduler gif"](https://github.com/zakwarsame/scheduler/blob/master/docs/demonstration.gif)
+!["Scheduler gif"](https://github.com/zakwarsame/spacetagram/blob/master/docs/spacetagram_demo.gif)
 
 ## Running Cypress Tests
 
