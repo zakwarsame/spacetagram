@@ -20,7 +20,6 @@ export default function Navbar() {
         <Avatar src={rocket} alt="Logo" sx={{ width: 50, height: 50 }} />
         <Typography
           sx={{
-            
             flexGrow: 1,
             textAlign: "center",
             fontFamily: "NasalizationRg-Regular",

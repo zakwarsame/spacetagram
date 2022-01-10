@@ -17,7 +17,13 @@ A client-side single page application built using React that pulls data from Nas
 
 ## Installation
 
-1. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm). This app was both built and hosted using node v16.13.1 and it is highly recommended to use this in your environment
+1. Clone this repo 
+
+   ```sh
+   git clone https://github.com/zakwarsame/spacetagram.git
+   ```
+
+1. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm). This app was both built and hosted using node v16.13.1
 
    ```sh
    nvm install
@@ -29,14 +35,15 @@ A client-side single page application built using React that pulls data from Nas
    npm install
    ```
 
+1. Sign up for **[NASA's free API key here](https://api.nasa.gov/)**
+
+1. Create a `.env` file and setup your key by following the `.env.example` file
+
 1. Start the development server
 
    ```sh
    npm start
    ```
-1. Sign up for **[NASA's free API key here](https://api.nasa.gov/)**
-
-1. Create a `.env` file and setup your key by following the `.env.example` file
 
 ## Demo
 
