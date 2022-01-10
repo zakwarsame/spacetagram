@@ -22,7 +22,7 @@ const PhotoItem = (props) => {
     setExpand(!expand);
   };
 
-  const ExpandMore = styled((props) => {
+  const ExpandTextMore = styled((props) => {
     const { expand, ...other } = props;
     return <IconButton {...other} />;
   })(({ theme, expand }) => ({
@@ -40,12 +40,14 @@ const PhotoItem = (props) => {
         subheader={date}
         sx={{ fontFamily: "Video Medium" }}
       />
+
       <CardMedia
         component="img"
         height="300"
         image={url}
         alt={photoItem.title}
       />
+
       <CardContent>
         <Collapse in={!expand}>
           <Typography color="text.secondary">{explanation}</Typography>
@@ -54,25 +56,27 @@ const PhotoItem = (props) => {
           {expand && explanation}
         </Typography>
       </CardContent>
+
       <CardActions disableSpacing>
         <FormControlLabel
           control={
             <Checkbox
               icon={<FavoriteBorderIcon />}
-              checkedIcon={<FavoriteIcon sx={{color:"#fff"}} />}
+              checkedIcon={<FavoriteIcon sx={{ color: "purple" }} />}
               name="checkedH"
             />
           }
-          label=""
+          label="Like"
         />
-        <ExpandMore
+
+        <ExpandTextMore
           expand={!expand}
           onClick={toggleExpansion}
           aria-expanded={expand}
           aria-label="show more"
         >
           <ExpandMoreIcon />
-        </ExpandMore>
+        </ExpandTextMore>
       </CardActions>
     </Card>
   );
