@@ -19,7 +19,6 @@ axios.interceptors.request.use(
   }
 );
 
-
 const apodExportData = {
   getApod() {
     return axios.get(`${nasaURL}planetary/apod`);
