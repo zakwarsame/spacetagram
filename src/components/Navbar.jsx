@@ -20,16 +20,17 @@ export default function Navbar() {
         <Avatar src={rocket} alt="Rocket Logo" sx={{ width: 50, height: 50 }} />
         <Typography
           sx={{
+            
             flexGrow: 1,
             textAlign: "center",
             fontFamily: "NasalizationRg-Regular",
-            fontSize: "2rem",
+            fontSize: "1.7rem",
             margin: "10px 0px",
           }}
           variant="h6"
           component="div"
         >
-          Spacetagram{" "}
+          Spacetagram
           <span
             style={{
               fontSize: 20,
@@ -37,7 +38,7 @@ export default function Navbar() {
               fontFamily: "Video Medium",
             }}
           >
-            Sourced from NASA's Astronomy Picture of the Day
+            NASA's Astronomy Picture of the Day
           </span>
         </Typography>
 
