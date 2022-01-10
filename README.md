@@ -8,7 +8,7 @@ Visit the live link [here](https://spacetagramverse.netlify.app/)
 - [Installation](#installation)
 - [Demo](#demo)
 - [Dependencies](#dependencies)
-- [Known Issues](#knownissues)
+- [Known Issues](#known-issues)
 
 ##  Description
 
