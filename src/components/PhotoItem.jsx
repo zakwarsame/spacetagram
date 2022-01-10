@@ -11,9 +11,9 @@ import Checkbox from "@mui/material/Checkbox";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
-import { Grow, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import Collapse from "@mui/material/Collapse";
-import { orange } from '@mui/material/colors';
+
 const PhotoItem = (props) => {
   const { photoItem, title, date, url, explanation } = props;
   const [expand, setExpand] = useState(true);
@@ -59,7 +59,7 @@ const PhotoItem = (props) => {
           control={
             <Checkbox
               icon={<FavoriteBorderIcon />}
-              checkedIcon={<FavoriteIcon sx={{color:orange['A200']}} />}
+              checkedIcon={<FavoriteIcon sx={{color:"#fff"}} />}
               name="checkedH"
             />
           }

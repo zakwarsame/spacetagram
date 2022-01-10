@@ -2,12 +2,10 @@ import apiCall from "./helpers/apiCall";
 import "./fonts/style.css";
 import PhotoList from "./components/PhotoList";
 import Container from "@mui/material/Container";
-import Navbar from "./components/Header/Navbar";
-import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import LinearProgress from "@mui/material/LinearProgress";
-import Header from "./components/Header";
 import Error from "./components/Error";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   const [apod, setApod] = useState();
@@ -30,13 +28,13 @@ const App = () => {
 
   return (
     <div>
-      <Header isLoading={isLoading} />
+      <Navbar/>
       {isLoading ? (
         <LinearProgress />
       ) : error ? (
         <Error />
       ) : (
-        <Container maxWidth="sm">
+        <Container maxWidth="sm"  >
           <PhotoList apod={apod} />
         </Container>
       )}

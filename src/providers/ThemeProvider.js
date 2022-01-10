@@ -1,6 +1,7 @@
 import * as React from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { blueGrey, orange, grey, deepPurple } from '@mui/material/colors';
+import { CssBaseline } from "@mui/material";
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {},
 });
@@ -18,6 +19,10 @@ export default function ToggleColorMode(props) {
               main: deepPurple['A700'],
             },
             divider: grey[500],
+            background: {
+              default: grey[300],
+              paper: grey[200],
+            },
             text: {
               primary: deepPurple['A700'],
               secondary: grey[800],
@@ -57,7 +62,9 @@ export default function ToggleColorMode(props) {
 
   return (
     <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+      <ThemeProvider theme={theme}>
+      <CssBaseline />
+        {props.children}</ThemeProvider>
     </ColorModeContext.Provider>
   );
 }

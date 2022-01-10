@@ -1,16 +1,14 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import Switch from "@mui/material/Switch";
-import { Avatar, Button } from "@mui/material";
-import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
-import { ColorModeContext } from "../../providers/ThemeProvider";
-import rocket from "../../assets/rocket.png";
+import { Avatar } from "@mui/material";
+import { useTheme} from "@mui/material/styles";
+import { ColorModeContext } from "../providers/ThemeProvider";
+import rocket from "../assets/rocket.png";
 
 export default function Navbar() {
   const colorMode = React.useContext(ColorModeContext);
