@@ -47,7 +47,7 @@ A client-side single page application built using React that pulls data from Nas
 ## Running Cypress Tests
 
 ```sh
-npm run storybook
+npm run cypress
 ```
 
 ## Dependencies
