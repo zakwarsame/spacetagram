@@ -7,8 +7,10 @@ import Error from "./components/Error";
 import Navbar from "./components/Navbar";
 import InfiniteScroll from "react-infinite-scroll-component";
 import useImageData from "./hooks/useImageData";
+import { Toolbar } from "@mui/material";
+import ScrollTop from "./components/ScrollTop";
 
-const App = () => {
+const App = (props) => {
   const { data, status, numberOfPhotos, fetchNextPage, hasNextPage } =
     useImageData();
 
@@ -21,6 +23,7 @@ const App = () => {
         <Error />
       ) : (
         <Container maxWidth="sm">
+          <Toolbar id="back-to-top-anchor" />
           <InfiniteScroll
             dataLength={numberOfPhotos}
             next={fetchNextPage}
@@ -36,6 +39,8 @@ const App = () => {
           </InfiniteScroll>
         </Container>
       )}
+
+      <ScrollTop />
     </div>
   );
 };
