@@ -1,41 +1,39 @@
-import apiCall from "./helpers/apiCall";
+import React from "react";
 import "./fonts/style.css";
 import PhotoList from "./components/PhotoList";
 import Container from "@mui/material/Container";
-import { useEffect, useState } from "react";
 import LinearProgress from "@mui/material/LinearProgress";
 import Error from "./components/Error";
 import Navbar from "./components/Navbar";
+import InfiniteScroll from "react-infinite-scroll-component";
+import useImageData from "./hooks/useImageData";
 
 const App = () => {
-  const [apod, setApod] = useState();
-  const [isLoading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    apiCall
-      .getApod()
-      .then((apodData) => {
-        setApod(apodData.data);
-      })
-      .then((e) => setLoading(false))
-      .catch((err) => {
-        setLoading(false);
-        setError(true);
-      });
-  }, []);
+  const { data, status, numberOfPhotos, fetchNextPage, hasNextPage } =
+    useImageData();
 
   return (
     <div>
-      <Navbar/>
-      {isLoading ? (
+      <Navbar />
+      {status === "loading" ? (
         <LinearProgress />
-      ) : error ? (
+      ) : status === "error" ? (
         <Error />
       ) : (
-        <Container maxWidth="sm"  >
-          <PhotoList apod={apod} />
+        <Container maxWidth="sm">
+          <InfiniteScroll
+            dataLength={numberOfPhotos}
+            next={fetchNextPage}
+            hasMore={!!hasNextPage}
+            loader={<LinearProgress />}
+            endMessage={<span>That's all!</span>}
+          >
+            {data.pages.map((eachClusterOfTen, i) => (
+              <React.Fragment key={i}>
+                <PhotoList apod={eachClusterOfTen.results.data} />
+              </React.Fragment>
+            ))}
+          </InfiniteScroll>
         </Container>
       )}
     </div>

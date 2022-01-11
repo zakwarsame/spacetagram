@@ -4,7 +4,7 @@ Visit the live link [here](https://spacetagramverse.netlify.app/)
 
 ## Table of Contents
 
-- [Description](#about)
+- [Description](#descriptoin)
 - [Installation](#installation)
 - [Demo](#demo)
 - [Dependencies](#dependencies)
