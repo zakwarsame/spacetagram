@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Fab, Toolbar, useScrollTrigger, Zoom } from "@mui/material";
+import { Box, Fab, useScrollTrigger, Zoom } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 const ScrollTop = () => {
