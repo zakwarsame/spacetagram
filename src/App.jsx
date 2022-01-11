@@ -1,43 +1,46 @@
-import apiCall from "./helpers/apiCall";
+import React from "react";
 import "./fonts/style.css";
 import PhotoList from "./components/PhotoList";
 import Container from "@mui/material/Container";
-import { useEffect, useState } from "react";
 import LinearProgress from "@mui/material/LinearProgress";
 import Error from "./components/Error";
 import Navbar from "./components/Navbar";
+import InfiniteScroll from "react-infinite-scroll-component";
+import useImageData from "./hooks/useImageData";
+import { Toolbar } from "@mui/material";
+import ScrollTop from "./components/ScrollTop";
 
-const App = () => {
-  const [apod, setApod] = useState();
-  const [isLoading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    apiCall
-      .getApod()
-      .then((apodData) => {
-        setApod(apodData.data);
-      })
-      .then((e) => setLoading(false))
-      .catch((err) => {
-        setLoading(false);
-        setError(true);
-      });
-  }, []);
+const App = (props) => {
+  const { data, status, numberOfPhotos, fetchNextPage, hasNextPage } =
+    useImageData();
 
   return (
     <div>
-      <Navbar/>
-      {isLoading ? (
+      <Navbar />
+      {status === "loading" ? (
         <LinearProgress />
-      ) : error ? (
+      ) : status === "error" ? (
         <Error />
       ) : (
-        <Container maxWidth="sm"  >
-          <PhotoList apod={apod} />
+        <Container maxWidth="sm">
+          <Toolbar id="back-to-top-anchor" />
+          <InfiniteScroll
+            dataLength={numberOfPhotos}
+            next={fetchNextPage}
+            hasMore={!!hasNextPage}
+            loader={<LinearProgress />}
+            endMessage={<span>That's all!</span>}
+          >
+            {data.pages.map((eachClusterOfTen, i) => (
+              <React.Fragment key={i}>
+                <PhotoList apod={eachClusterOfTen.results.data} />
+              </React.Fragment>
+            ))}
+          </InfiniteScroll>
         </Container>
       )}
+
+      <ScrollTop />
     </div>
   );
 };
