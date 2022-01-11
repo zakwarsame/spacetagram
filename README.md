@@ -4,7 +4,8 @@ Visit the live link [here](https://spacetagramverse.netlify.app/)
 
 ## Table of Contents
 
-- [Description](#about)
+- [Description](#description)
+- [Features](#features)
 - [Installation](#installation)
 - [Demo](#demo)
 - [Dependencies](#dependencies)
@@ -13,6 +14,14 @@ Visit the live link [here](https://spacetagramverse.netlify.app/)
 ##  Description
 
 A client-side single page application built using React that pulls data from Nasa's [Astronomy Picture of The Day](https://apod.nasa.gov/). Users can browse through these images and like or unlike them. The app also has a dark-mode feature which users can toggle depending on their preference.
+
+## Features
+
+- Load Image data from [NASA's API](https://api.nasa.gov)
+- Like and dislike each image
+- Switch between dark mode and light mode
+- Loading progress bar
+- Display error page when it fails to load
 
 
 ## Installation
