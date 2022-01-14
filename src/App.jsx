@@ -7,8 +7,8 @@ import Error from "./components/Error";
 import Navbar from "./components/Navbar";
 import InfiniteScroll from "react-infinite-scroll-component";
 import useImageData from "./hooks/useImageData";
-import { Toolbar } from "@mui/material";
 import ScrollTop from "./components/ScrollTop";
+import LoadItem from "./components/LoadItem";
 
 const App = (props) => {
   const { data, status, numberOfPhotos, fetchNextPage, hasNextPage } =
@@ -17,26 +17,27 @@ const App = (props) => {
   return (
     <div>
       <Navbar />
-      {status === "loading" ? (
-        <LinearProgress />
-      ) : status === "error" ? (
+      {status === "error" ? (
         <Error />
       ) : (
         <Container maxWidth="sm">
-          <Toolbar id="back-to-top-anchor" />
-          <InfiniteScroll
-            dataLength={numberOfPhotos}
-            next={fetchNextPage}
-            hasMore={!!hasNextPage}
-            loader={<LinearProgress />}
-            endMessage={<span>That's all!</span>}
-          >
-            {data.pages.map((eachClusterOfTen, i) => (
-              <React.Fragment key={i}>
-                <PhotoList apod={eachClusterOfTen.results.data} />
-              </React.Fragment>
-            ))}
-          </InfiniteScroll>
+          {status === "loading" ? (
+            <LoadItem length={numberOfPhotos} />
+          ) : (
+            <InfiniteScroll
+              dataLength={numberOfPhotos}
+              next={fetchNextPage}
+              hasMore={!!hasNextPage}
+              loader={<LinearProgress />}
+              endMessage={<span>That's all!</span>}
+            >
+              {data.pages.map((eachClusterOfTen, i) => (
+                <React.Fragment key={i}>
+                  <PhotoList apod={eachClusterOfTen.results.data} />
+                </React.Fragment>
+              ))}
+            </InfiniteScroll>
+          )}
         </Container>
       )}
 
