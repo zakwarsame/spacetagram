@@ -72,6 +72,8 @@ npm run cypress
 - axios
 - material-ui
 - dotenv
+- react-infinite-scroll-component
+- react-query
 
 ## Known Issues
 
