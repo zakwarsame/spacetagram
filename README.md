@@ -13,7 +13,7 @@ Visit the live link [here](https://spacetagramverse.netlify.app/)
 
 ##  Description
 
-A client-side single page application built using React that pulls data from Nasa's [Astronomy Picture of The Day](https://apod.nasa.gov/). Users can browse through these images and like or unlike them. The app also has a dark-mode feature which users can toggle depending on their preference.
+A client-side single page application built using React that pulls data from Nasa's [Astronomy Picture of The Day](https://apod.nasa.gov/). It's like instagram but for space lovers. Users can browse through these images and like or unlike them. The app also has a dark-mode feature which users can toggle depending on their preference.
 
 ## Features
 
