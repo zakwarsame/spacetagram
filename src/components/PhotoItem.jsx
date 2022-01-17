@@ -15,7 +15,7 @@ import { IconButton } from "@mui/material";
 import Collapse from "@mui/material/Collapse";
 
 const PhotoItem = (props) => {
-  const { photoItem, title, date, url, explanation } = props;
+  const { title, date, url, mediaType, explanation } = props;
   const [expand, setExpand] = useState(true);
 
   const toggleExpansion = () => {
@@ -34,19 +34,17 @@ const PhotoItem = (props) => {
   }));
 
   return (
-    <Card sx={{ margin: "20px", borderRadius: "10px", boxShadow: "2px 2px" }}>
+    <Card sx={{ margin: "20px", borderRadius: "10px" }}>
       <CardHeader
         title={title}
         subheader={date}
         sx={{ fontFamily: "Video Medium" }}
       />
-
-      <CardMedia
-        component="img"
-        height="300"
-        image={url}
-        alt={photoItem.title}
-      />
+      {mediaType === "image" ? (
+        <CardMedia component="img" height="300" image={url} alt={title} />
+      ) : (
+        <CardMedia component="iframe" height="300" alt={title} src={url} />
+      )}
 
       <CardContent>
         <Collapse in={!expand}>

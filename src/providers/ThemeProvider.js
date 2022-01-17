@@ -1,13 +1,13 @@
-import * as React from "react";
+import { createContext, useMemo, useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { blueGrey, orange, grey, deepPurple } from '@mui/material/colors';
+import { blueGrey, orange, grey, deepPurple } from "@mui/material/colors";
 import { CssBaseline } from "@mui/material";
-export const ColorModeContext = React.createContext({
+export const ColorModeContext = createContext({
   toggleColorMode: () => {},
 });
 
 export default function ToggleColorMode(props) {
-  const [mode, setMode] = React.useState("dark");
+  const [mode, setMode] = useState("dark");
 
   const getDesignTokens = (mode) => ({
     palette: {
@@ -16,7 +16,7 @@ export default function ToggleColorMode(props) {
         ? {
             // palette values for light mode
             primary: {
-              main: deepPurple['A700'],
+              main: deepPurple["A700"],
             },
             divider: grey[500],
             background: {
@@ -24,16 +24,16 @@ export default function ToggleColorMode(props) {
               paper: grey[200],
             },
             text: {
-              primary: deepPurple['A700'],
+              primary: deepPurple["A700"],
               secondary: grey[800],
             },
           }
         : {
             // palette values for dark mode
             primary: {
-              main: deepPurple['A700'],
+              main: deepPurple["A700"],
             },
-            divider: orange['A200'],
+            divider: orange["A200"],
             background: {
               default: blueGrey[900],
               paper: blueGrey[900],
@@ -46,7 +46,7 @@ export default function ToggleColorMode(props) {
     },
   });
 
-  const colorMode = React.useMemo(
+  const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
         setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
@@ -55,16 +55,14 @@ export default function ToggleColorMode(props) {
     []
   );
 
-  const theme = React.useMemo(
-    () =>
-    createTheme(getDesignTokens(mode)), [mode]
-  );
+  const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-      <CssBaseline />
-        {props.children}</ThemeProvider>
+        <CssBaseline />
+        {props.children}
+      </ThemeProvider>
     </ColorModeContext.Provider>
   );
 }

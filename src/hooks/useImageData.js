@@ -1,13 +1,12 @@
-import apiCall from "../helpers/apiCall";
+import fetchImageData from "../helpers/fetchImageData";
 import { useState } from "react";
 import { useInfiniteQuery } from "react-query";
-
 
 const useImageData = () => {
   const [numberOfPhotos, setNumberOfPhotos] = useState(10);
 
   const fetchImages = ({ pageParam = 1 }) => {
-    return apiCall.getApod().then((results) => {
+    return fetchImageData.getApod().then((results) => {
       setNumberOfPhotos(10 * pageParam);
       return { results, nextPage: pageParam + 1 };
     });
@@ -21,8 +20,7 @@ const useImageData = () => {
     }
   );
 
-return {data, status, numberOfPhotos, fetchNextPage, hasNextPage}
+  return { data, status, numberOfPhotos, fetchNextPage, hasNextPage };
 };
-
 
 export default useImageData;

@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <AppBar position="static">
-      <Toolbar>
+      <Toolbar id="back-to-top-anchor">
         <Avatar src={rocket} alt="Logo" sx={{ width: 50, height: 50 }} />
         <Typography
           sx={{

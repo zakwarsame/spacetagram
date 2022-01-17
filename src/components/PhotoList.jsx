@@ -7,10 +7,11 @@ const PhotoList = (props) => {
       {Array.isArray(apod) &&
         apod.map((imageData, i) => (
             <PhotoItem
-              key={i}
+              key={imageData.url}
               title={imageData.title}
               date={imageData.date}
               url={imageData.url}
+              mediaType={imageData.media_type}
               explanation={imageData.explanation}
               photoItem={imageData}
             />
